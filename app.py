@@ -29,4 +29,4 @@ selected_topics = st.sidebar.multiselect(
 if selected_topics:
     st.write(model.visualize_topics_over_time(topics_over_time_df, topics=selected_topics, custom_labels=True))
 else:
-    st.write(model.visualize_topics_over_time(topics_over_time_df, topics=[8, 18], custom_labels=True))
+    st.write(model.visualize_topics_over_time(topics_over_time_df, topics=[8, 18], custom_labels=True, title=None))
