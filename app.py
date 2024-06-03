@@ -17,6 +17,7 @@ model.set_topic_labels(topic_dict)
 topics_over_time_df = pd.read_csv("ST_Data/topics_over_time.csv")
 
 # Streamlit app
+st.title("New York Times Year in Review")
 st.sidebar.header("Select Topics")
 selected_topics = st.sidebar.multiselect(
     "Choose topics to visualize",
