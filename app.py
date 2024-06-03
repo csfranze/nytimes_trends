@@ -18,6 +18,7 @@ topics_over_time_df = pd.read_csv("ST_Data/topics_over_time.csv")
 
 # Streamlit app
 st.title("New York Times Year in Review")
+st.image("ST_Data/poweredby_nytimes_200a.png", use_column_width=True)
 st.sidebar.header("Select Topics")
 selected_topics = st.sidebar.multiselect(
     "Choose topics to visualize",
