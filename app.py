@@ -17,8 +17,7 @@ model.set_topic_labels(topic_dict)
 topics_over_time_df = pd.read_csv("ST_Data/topics_over_time.csv")
 
 # Streamlit app
-st.image("ST_Data/poweredby_nytimes_200a.png", width=200)
-st.title("Year in Review")
+st.title("Year in Review" st.image("ST_Data/poweredby_nytimes_200a.png", width=200))
 st.sidebar.header("Select Topics")
 selected_topics = st.sidebar.multiselect(
     "Choose topics to visualize",
