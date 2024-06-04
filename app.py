@@ -30,3 +30,9 @@ if selected_topics:
     st.write(model.visualize_topics_over_time(topics_over_time_df, topics=selected_topics, custom_labels=True, title=''))
 else:
     st.write(model.visualize_topics_over_time(topics_over_time_df, topics=[8, 18], custom_labels=True, title=''))
+
+# Display the topics and their corresponding entries
+for topic in selected_topics:
+    st.write(f"Topic: {topic}")
+    filtered_entries = model.get_document_info(docs_list)[model.get_document_info(docs_list)['Topic'] == topic].tail(5)
+    st.write(filtered_entries)
