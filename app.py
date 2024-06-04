@@ -36,3 +36,4 @@ for topic in selected_topics:
     st.write(f"Topic: {topic}")
     filtered_entries = model.get_document_info(docs_list)[model.get_document_info(docs_list)['Topic'] == topic].tail(5).index.tolist()
     st.write(df['headline'][filtered_entries])
+    st.markdown('['+str(df['headline'].iloc[filtered_entries])+']'+'('+str(df['web_url'].iloc[filtered_entries])+')')
