@@ -17,7 +17,7 @@ model.set_topic_labels(topic_dict)
 topics_over_time_df = pd.read_csv("ST_Data/topics_over_time.csv")
 
 # Streamlit app
-st.image("ST_Data/nytlogo.png", width=200)
+st.image("ST_Data/nytlogo.png", width=300)
 st.title("Emergent Topics for the Year")
 st.subheader("Trends of Selected Topics")
 st.sidebar.header("Select Topics")
