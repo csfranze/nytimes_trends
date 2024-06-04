@@ -26,6 +26,7 @@ selected_topics = st.sidebar.multiselect(
     options=list(topic_dict.keys()),
     format_func=lambda x: topic_dict[x]
 )
+st.sidebar.image("ST_Data/poweredby_nytimes_200a.png", width=200)
 
 if selected_topics:
     st.write(model.visualize_topics_over_time(topics_over_time_df, topics=selected_topics, custom_labels=True, title=''))
