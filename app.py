@@ -33,7 +33,7 @@ else:
 
 # Display the topics and their corresponding entries
 for topic in selected_topics:
-    st.write(f"Topic: {topic}")
+    st.write(f"Topic: {topic_dict[topic]}")
     filtered_entries = model.get_document_info(docs_list)[model.get_document_info(docs_list)['Topic'] == topic].tail(5).index.tolist()
     for entry in filtered_entries:
         st.markdown('['+str(df['headline'].iloc[entry])+']'+'('+str(df['web_url'].iloc[entry])+')')
