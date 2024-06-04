@@ -18,7 +18,7 @@ topics_over_time_df = pd.read_csv("ST_Data/topics_over_time.csv")
 
 # Streamlit app
 st.image("ST_Data/nytlogo_cropped.png", width=300)
-st.title("Emergent Topics for the Year")
+st.title("Emerging Topics from May 2023 - May 2024")
 st.subheader("Trends of Selected Topics")
 st.sidebar.header("Select Topics")
 selected_topics = st.sidebar.multiselect(
