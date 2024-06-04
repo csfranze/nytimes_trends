@@ -19,6 +19,7 @@ topics_over_time_df = pd.read_csv("ST_Data/topics_over_time.csv")
 # Streamlit app
 st.image("ST_Data/poweredby_nytimes_200a.png", width=200)
 st.title("Emergent Topics for the Year")
+st.subheader("Trends of Selected Topics")
 st.sidebar.header("Select Topics")
 selected_topics = st.sidebar.multiselect(
     "Choose topics to visualize",
@@ -31,7 +32,7 @@ if selected_topics:
 else:
     st.write(model.visualize_topics_over_time(topics_over_time_df, topics=[8, 18], custom_labels=True, title=''))
 
-st.subheader("Recent Articles")
+st.subheader("Recent Articles on Selected Topics")
 # Display the topics and their corresponding entries
 for topic in selected_topics:
     st.write(f"Topic: {topic_dict[topic]}")
