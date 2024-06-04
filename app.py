@@ -33,9 +33,16 @@ else:
     st.write(model.visualize_topics_over_time(topics_over_time_df, topics=[8, 18], custom_labels=True, title=''))
 
 st.subheader("Recent Articles on Selected Topics")
-# Display the topics and their corresponding entries
-for topic in selected_topics:
-    st.write(f"Topic: {topic_dict[topic]}")
-    filtered_entries = model.get_document_info(docs_list)[model.get_document_info(docs_list)['Topic'] == topic].tail(4).index.tolist()
-    for entry in filtered_entries:
-        st.markdown('['+str(df['headline'].iloc[entry])+']'+'('+str(df['web_url'].iloc[entry])+')')
+if selected_topics:
+    # Display the topics and their corresponding entries
+    for topic in selected_topics:
+        st.write(f"Topic: {topic_dict[topic]}")
+        filtered_entries = model.get_document_info(docs_list)[model.get_document_info(docs_list)['Topic'] == topic].tail(4).index.tolist()
+        for entry in filtered_entries:
+            st.markdown('['+str(df['headline'].iloc[entry])+']'+'('+str(df['web_url'].iloc[entry])+')')
+else:
+    for topic in [8, 18]:
+        st.write(f"Topic: {topic_dict[topic]}")
+        filtered_entries = model.get_document_info(docs_list)[model.get_document_info(docs_list)['Topic'] == topic].tail(4).index.tolist()
+        for entry in filtered_entries:
+            st.markdown('['+str(df['headline'].iloc[entry])+']'+'('+str(df['web_url'].iloc[entry])+')')
