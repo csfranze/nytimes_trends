@@ -34,5 +34,5 @@ else:
 # Display the topics and their corresponding entries
 for topic in selected_topics:
     st.write(f"Topic: {topic}")
-    filtered_entries = model.get_document_info(docs_list)[model.get_document_info(docs_list)['Topic'] == topic].tail(5)
-    st.write(filtered_entries)
+    filtered_entries = model.get_document_info(docs_list)[model.get_document_info(docs_list)['Topic'] == topic].tail(5).index.tolist()
+    st.write(df['headline'].iloc[filtered_entries])
